@@ -1,15 +1,15 @@
 # CMPT431-Project
 ## Compile
 
-1. To compile the code, use the following command.
+1. To compile all the code, use the following command.
 
    ```shell
    make
    ```
 
-## Serial implementation
+## To run the serial implementation
 
-1. To run the serial implementation, use the following command.
+1. To run the executable of the serial implementation, use the following command.
 
    ```shell
    ./SSSP_serial --sourceVertex 1 --inputFile absolute_path_of_input_graph --y_or_n yes
@@ -21,7 +21,23 @@
 
    --y_or_n: whether or not to print out the shortest path
 
-## Distributed implementation
+## To run the parallel implementation
+
+1. To run the executable of the parallel implementation, use the following command.
+
+   ```shell
+   ./SSSP_parallel --nThreads 4 --sourceVertex 1 --inputFile [absolute_path_of_input_graph] --displayOutput [yes/no]
+   ```
+
+   --nThreads: number of threads
+
+   --sourceVertex: the ID of the source vertex
+
+   --inputFile: the absolute path of the input graph
+
+   --displayOutput: whether to print out the result of the shortest path
+
+## To run the distributed implementation
 
 1. Run the executable file SSSP_MPI locally:
 
