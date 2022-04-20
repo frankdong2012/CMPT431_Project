@@ -160,7 +160,7 @@ void display_result(uint *dist_array, uintV *prev_vertex_array, uintV number_ver
     {
         if (dist_array[i] == INT_MAX)
         {
-            std::cout << i << " No path,    No previous vertex"<< std::endl;
+            std::cout << i << ",    No path,    No previous vertex"<< std::endl;
         }
         else
         {
@@ -203,6 +203,7 @@ int main(int argc, char *argv[]) {
   std::cout << "Created graph\n";
   std::cout << "Number of threads: " << n_threads << "\n"; 
   std::cout << "Graph being tested: " << input_file_path << "\n";
+  std::cout << "Source vertex: " << source_vertex << "\n";
   uintV number_vertex = g.n_;
   double time_taken = 0.0;
   uint *dist_array = new uint[number_vertex];
