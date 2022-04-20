@@ -7,6 +7,24 @@
    make
    ```
 
+2. To compile the serial implementation, use the following command.
+
+   ```shell
+   make SSSP_serial
+   ```
+
+3. To compile the parallel implementation, use the following command.
+
+   ```shell
+   make SSSP_parallel
+   ```
+
+4. To compile the distributed implementation, use the following command.
+
+   ```shell
+   make SSSP_MPI
+   ```
+
 ## To run the serial implementation
 
 1. To run the executable of the serial implementation, use the following command.
@@ -20,6 +38,26 @@
    --inputeFile: absolute path of the input graph
 
    --y_or_n: whether or not to print out the shortest path
+
+2. Run the executable file SSSP_serial on slurm:
+   create a a bash script  in the following format:
+
+   ```shell
+   #!/bin/bash
+   #
+   #SBATCH --cpus-per-task=1
+   #SBATCH --time=05:00
+   #SBATCH --mem=10G
+   #SBATCH --partition=fast
+   
+   srun ./SSSP_serial --sourceVertex 1 --inputFile absolute_path_of_input_graph --y_or_n yes
+   ```
+
+   run it on slurm by command:
+
+   ```shell
+   sbatch filename.sh
+   ```
 
 ## To run the parallel implementation
 
@@ -37,7 +75,7 @@
 
    --displayOutput: whether to print out the result of the shortest path
 
-2. Run the executable file SSSP_MPI on slurm:
+2. Run the executable file SSSP_parallel on slurm:
    create a a bash script  in the following format:
 
    ```bash
@@ -61,23 +99,23 @@
 
 1. Run the executable file SSSP_MPI locally:
 
-type the following command in terminal:
+​		type the following command in terminal:
 
 ```shell
 mpirun -n num_processes ./SSSP_MPI --sourceVertex vertex_num --inputFile path_of_graph --y_or_n str 
 ```
 
-Arguments:
+​	Arguments:
 
---num_precesses: indicates the number of processes used   
+​	--num_precesses: indicates the number of processes used   
 
---vertex_num: indicates the vertex number of the source vertex
+​	--vertex_num: indicates the vertex number of the source vertex
 
---path_of_graph: indicates the path of the input graph 
+​	--path_of_graph: indicates the path of the input graph 
 
---str: can only be "yes" or "no". "yes" indicates printing out the detailed result, "no" indicates otherwise.
+​	--str: can only be "yes" or "no". "yes" indicates printing out the detailed result, "no" indicates otherwise.
 
-sample command:
+​	sample command:
 
 ```shell
 mpirun -n 4 ./SSSP_MPI --sourceVertex 0 --inputFile input_graphs/testG1 --y_or_n yes
@@ -98,10 +136,10 @@ mpirun -n 4 ./SSSP_MPI --sourceVertex 0 --inputFile input_graphs/testG1 --y_or_n
 srun ./SSSP_MPI --sourceVertex 0 --inputFile input_graphs/testG1 --y_or_n yes
 ```
 
-options:
---ntasks: indicates the number of processes used
+​	options:
+​	--ntasks: indicates the number of processes used
 
-run it on slurm by command:
+​	run it on slurm by command:
 
 ```shell
 sbatch filename.sh
