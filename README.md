@@ -37,6 +37,26 @@
 
    --displayOutput: whether to print out the result of the shortest path
 
+2. Run the executable file SSSP_MPI on slurm:
+   create a a bash script  in the following format:
+
+   ```bash
+   #!/bin/bash
+   #
+   #SBATCH --cpus-per-task=4
+   #SBATCH --time=05:00
+   #SBATCH --mem=10G
+   #SBATCH --partition=fast
+   
+   srun ./SSSP_parallel --nThreads 4 --sourceVertex 1 --inputFile [absolute_path_of_input_graph] --displayOutput [yes/no]
+   ```
+
+   run it on slurm by command:
+
+   ```bash
+   sbatch filename.sh
+   ```
+
 ## To run the distributed implementation
 
 1. Run the executable file SSSP_MPI locally:
