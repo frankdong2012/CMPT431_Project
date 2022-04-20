@@ -26,12 +26,17 @@
 1. Run the executable file SSSP_MPI locally:
 
 type the following command in terminal:
+
 mpirun -n num_processes ./SSSP_MPI --sourceVertex vertex_num --inputFile path_of_graph --y_or_n str   
 
 Arguments:
+
 --num_precesses indicates the number of processes used   
+
 --vertex_num indicates the vertex number of the source vertex
---path_of_graph indicates the path of the input graph
+
+--path_of_graph indicates the path of the input graph 
+
 --str can only be "yes" or "no". "yes" indicates printing out the detailed result, "no" indicates otherwise.
 
 sample command:
