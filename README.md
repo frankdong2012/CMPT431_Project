@@ -27,23 +27,28 @@
 
 type the following command in terminal:
 
-mpirun -n num_processes ./SSSP_MPI --sourceVertex vertex_num --inputFile path_of_graph --y_or_n str   
+```shell
+mpirun -n num_processes ./SSSP_MPI --sourceVertex vertex_num --inputFile path_of_graph --y_or_n str 
+```
 
 Arguments:
 
---num_precesses indicates the number of processes used   
+--num_precesses: indicates the number of processes used   
 
---vertex_num indicates the vertex number of the source vertex
+--vertex_num: indicates the vertex number of the source vertex
 
---path_of_graph indicates the path of the input graph 
+--path_of_graph: indicates the path of the input graph 
 
---str can only be "yes" or "no". "yes" indicates printing out the detailed result, "no" indicates otherwise.
+--str: can only be "yes" or "no". "yes" indicates printing out the detailed result, "no" indicates otherwise.
 
 sample command:
-mpirun -n 4 ./SSSP_MPI --sourceVertex 0 --inputFile input_graphs/testG1 --y_or_n yes
 
-2.Run the executable file SSSP_MPI on slurm:
-create a a bash script  in the following format:
+```shell
+mpirun -n 4 ./SSSP_MPI --sourceVertex 0 --inputFile input_graphs/testG1 --y_or_n yes
+```
+
+2. Run the executable file SSSP_MPI on slurm:
+   create a a bash script  in the following format:
 
 ```shell
 #!/bin/bash
@@ -58,6 +63,11 @@ srun ./SSSP_MPI --sourceVertex 0 --inputFile input_graphs/testG1 --y_or_n yes
 ```
 
 options:
---ntasks indicates the number of processes used
+--ntasks: indicates the number of processes used
 
-run it on slurm by command: sbatch filename.sh
+run it on slurm by command:
+
+```shell
+sbatch filename.sh
+```
+
