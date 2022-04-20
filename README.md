@@ -7,6 +7,24 @@
    make
    ```
 
+2. To compile the serial implementation, use the following command.
+
+   ```shell
+   make SSSP_serial
+   ```
+
+3. To compile the parallel implementation, use the following command.
+
+   ```shell
+   make SSSP_parallel
+   ```
+
+4. To compile the distributed implementation, use the following command.
+
+   ```shell
+   make SSSP_MPI
+   ```
+
 ## To run the serial implementation
 
 1. To run the executable of the serial implementation, use the following command.
