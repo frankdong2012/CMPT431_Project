@@ -1,7 +1,29 @@
 # CMPT431-Project
-CMPT431 Group Project
+## Compile
 
-1.Run the executable file SSSP_MPI locally:
+1. To compile the code, use the following command.
+
+   ```shell
+   make
+   ```
+
+## Serial implementation
+
+1. To run the serial implementation, use the following command.
+
+   ```shell
+   ./SSSP_serial --sourceVertex 1 --inputFile absolute_path_of_input_graph --y_or_n yes
+   ```
+
+   --sourceVertex: the ID of the source vertex
+
+   --inputeFile: absolute path of the input graph
+
+   --y_or_n: whether or not to print out the shortest path
+
+## Distributed implementation
+
+1. Run the executable file SSSP_MPI locally:
 
 type the following command in terminal:
 mpirun -n num_processes ./SSSP_MPI --sourceVertex vertex_num --inputFile path_of_graph --y_or_n str   
